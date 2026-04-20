@@ -1,0 +1,244 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\controllers\\homecontroller.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:controllers\\homecontroller.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\models\\ctuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:models\\ctuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\models\\ctefuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:models\\ctefuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\repositories\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:repositories\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|e:\\projects\\tfs\\btaddons\\concessiontrackerapp\\cconcessiontrackerapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E49BD159-A088-43DC-9B72-E36D3C312973}|CconcessionTrackerAPI.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Renil\\source\\Workspaces\\Workspace\\BTAddOns\\Concession Tracker Mobile Ordering App\\CconcessionTrackerAPI\\Models\\CTUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CorpModuleExportStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\CorpModuleExportStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IUserRepository.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\IUserRepository.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAADgv1MAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:22:32.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CTUser.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CTUser.cs",
+              "RelativeDocumentMoniker": "Models\\CTUser.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CTUser.cs",
+              "RelativeToolTip": "Models\\CTUser.cs",
+              "ViewState": "AgIAANABAAAAAAAAAAAywNwBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T04:51:38.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAADUPAAAAAAAAAAAAAGUPAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:22:13.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Controllers\\HomeController.cs.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Controllers\\HomeController.cs.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM0DAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T04:23:23.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CTEFUser.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CTEFUser.cs",
+              "RelativeDocumentMoniker": "Models\\CTEFUser.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CTEFUser.cs",
+              "RelativeToolTip": "Models\\CTEFUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T05:02:18.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EncryptionService.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\EncryptionService.cs",
+              "RelativeDocumentMoniker": "Repositories\\EncryptionService.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Repositories\\EncryptionService.cs",
+              "RelativeToolTip": "Repositories\\EncryptionService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:21:29.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADgvx0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:13:06.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-10T12:10:44.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T04:51:39.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:24:54.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CTUser.cs",
+              "DocumentMoniker": "C:\\Users\\Renil\\source\\Workspaces\\Workspace\\BTAddOns\\Concession Tracker Mobile Ordering App\\CconcessionTrackerAPI\\Models\\CTUser.cs",
+              "ToolTip": "C:\\Users\\Renil\\source\\Workspaces\\Workspace\\BTAddOns\\Concession Tracker Mobile Ordering App\\CconcessionTrackerAPI\\Models\\CTUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:05:52.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Department.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "Models\\Department.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Department.cs",
+              "RelativeToolTip": "Models\\Department.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:24:30.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Combo.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Combo.cs",
+              "RelativeDocumentMoniker": "Models\\Combo.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\Combo.cs",
+              "RelativeToolTip": "Models\\Combo.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:21:04.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CorpModuleExportStatus.cs",
+              "DocumentMoniker": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CorpModuleExportStatus.cs",
+              "RelativeDocumentMoniker": "Models\\CorpModuleExportStatus.cs",
+              "ToolTip": "E:\\Projects\\TFS\\BTAddOns\\ConcessionTrackerApp\\CconcessionTrackerAPI\\Models\\CorpModuleExportStatus.cs",
+              "RelativeToolTip": "Models\\CorpModuleExportStatus.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:20:31.331Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
