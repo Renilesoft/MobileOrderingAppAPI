@@ -334,6 +334,38 @@
   },
   {
     "ContainingType": "ConcessionTrackerAPI.Controllers.UsersController",
+    "Method": "GetUser",
+    "RelativePath": "api/Users/getUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ConcessionTrackerAPI.Controllers.UsersController",
+    "Method": "GetUserImage",
+    "RelativePath": "api/Users/getUserImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ConcessionTrackerAPI.Controllers.UsersController",
     "Method": "GetItemCategories",
     "RelativePath": "api/Users/item-categories/{marketName}",
     "HttpMethod": "GET",
@@ -577,6 +609,43 @@
         "Name": "request",
         "Type": "ConcessionTrackerAPI.Models.UnsaveItemRequest",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ConcessionTrackerAPI.Controllers.UsersController",
+    "Method": "UpdatePhone",
+    "RelativePath": "api/Users/updatePhone",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ConcessionTrackerAPI.Models.UpdatePhoneRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ConcessionTrackerAPI.Controllers.UsersController",
+    "Method": "UploadUserImage",
+    "RelativePath": "api/Users/uploadUserImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

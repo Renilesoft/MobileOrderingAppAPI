@@ -392,10 +392,12 @@ namespace ConcessionTrackerAPI.Repositories
             string? encryptedConnString = null;
             int concessionId = 0;
 
+            // 🔹 STEP 1 — Get Connection String
             await using (var centralConn = new SqlConnection(_connectionString))
             await using (var connCmd = new SqlCommand(connSql, centralConn))
             {
                 connCmd.Parameters.AddWithValue("@ConName", concessionName);
+
                 await centralConn.OpenAsync();
 
                 await using var reader = await connCmd.ExecuteReaderAsync();
@@ -418,7 +420,7 @@ namespace ConcessionTrackerAPI.Repositories
             {
                 await targetConn.OpenAsync();
 
-                // STEP 1 — INSERT USER INTO CUSTOMER TABLE
+                // 🔹 STEP 2 — Ensure Customer Exists
                 const string customerInsertSql = @"
             IF NOT EXISTS (
                 SELECT 1 FROM Customer WHERE csmr_int_csid = @UserId
@@ -440,26 +442,42 @@ namespace ConcessionTrackerAPI.Repositories
                     await custCmd.ExecuteNonQueryAsync();
                 }
 
-                // STEP 2 — FETCH ITEMS
+                // 🔹 STEP 3 — Fetch Items (UPDATED)
                 const string itemSql = @"
-                        SELECT itm_int_ItemID,
-                       itm_int_CategoryID,
-                       itm_mny_ItemPrice,
-                       itm_vch_ItemDescription
-                       FROM items
-                    ";
+            SELECT 
+                itm_int_ItemID,
+                itm_int_CategoryID,
+                itm_mny_ItemPrice,
+                itm_vch_ItemDescription,
+                itm_int_ItemImageSize,
+                itm_var_ItemImage
+            FROM Items
+            WHERE ISNULL(itm_bln_ListOnMobileApp, 0) = 1
+        ";
 
                 await using (var itemCmd = new SqlCommand(itemSql, targetConn))
                 await using (var reader = await itemCmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
+                        byte[]? imageBytes = null;
+
+                        if (!reader.IsDBNull(5))
+                            imageBytes = (byte[])reader[5];
+
                         items.Add(new ItemResponse
                         {
                             ItemId = reader.IsDBNull(0) ? 0 : Convert.ToInt32(reader[0]),
                             CategoryId = reader.IsDBNull(1) ? 0 : Convert.ToInt32(reader[1]),
                             ItemPrice = reader.IsDBNull(2) ? 0m : Convert.ToDecimal(reader[2]),
-                            ItemName = reader.IsDBNull(3) ? string.Empty : reader[3].ToString()!
+                            ItemName = reader.IsDBNull(3) ? string.Empty : reader[3].ToString()!,
+
+                            ImageSize = reader.IsDBNull(4) ? 0 : Convert.ToInt32(reader[4]),
+
+                            // 🔥 Convert to Base64
+                            ImageBase64 = imageBytes != null
+                                ? Convert.ToBase64String(imageBytes)
+                                : string.Empty
                         });
                     }
                 }
@@ -3941,6 +3959,202 @@ namespace ConcessionTrackerAPI.Repositories
             return combo;
         }
 
+        public async Task<UserResponse?> GetUserByIdAsync(int userId)
+        {
+            UserResponse? user = null;
+
+            const string query = @"
+    SELECT 
+        usr_int_usrid,
+        usr_vch_name,
+        usr_vch_emailid,
+        usr_vch_provider,
+        usr_vch_photo_url,
+        usr_vch_phoneno
+    FROM Users
+    WHERE usr_int_usrid = @UserId
+    ";
+
+            try
+            {
+                await using var conn = new SqlConnection(_connectionString);
+                await using var cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+
+                await conn.OpenAsync();
+
+                await using var reader = await cmd.ExecuteReaderAsync();
+
+                if (await reader.ReadAsync())
+                {
+                    user = new UserResponse
+                    {
+                        UserId = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                        Name = reader.IsDBNull(1) ? "" : reader.GetString(1),
+                        Email = reader.IsDBNull(2) ? "" : reader.GetString(2),
+                        Provider = reader.IsDBNull(3) ? "" : reader.GetString(3),
+                        PhotoUrl = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                        PhoneNo = reader.IsDBNull(5) ? "" : reader.GetString(5)
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error fetching user {UserId}", userId);
+            }
+
+            return user;
+        }
+
+        public async Task<bool> UploadUserImageAsync(int userId, IFormFile file)
+        {
+            try
+            {
+                if (file == null || file.Length == 0)
+                    return false;
+
+                // 🔒 Size limit (2MB)
+                if (file.Length > 2 * 1024 * 1024)
+                    throw new Exception("File must be less than 2MB");
+
+                // 🔒 File type validation
+                var ext = Path.GetExtension(file.FileName).ToLower();
+                var allowed = new[] { ".jpg", ".jpeg", ".png" };
+
+                if (!allowed.Contains(ext))
+                    throw new Exception("Invalid file type");
+
+                // 📦 Convert to byte[]
+                using var ms = new MemoryStream();
+                await file.CopyToAsync(ms);
+                var imageBytes = ms.ToArray();
+
+                const string query = @"
+        UPDATE Users
+        SET usr_img_photo = @Image
+        WHERE usr_int_usrid = @UserId
+        ";
+
+                await using var conn = new SqlConnection(_connectionString);
+                await using var cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+                cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = imageBytes;
+
+                await conn.OpenAsync();
+                await cmd.ExecuteNonQueryAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error uploading image");
+                return false;
+            }
+        }
+
+        public async Task<UserImageResponse?> GetUserImageAsync(int userId)
+        {
+            try
+            {
+                const string query = @"
+        SELECT usr_img_photo, usr_vch_photo_url, usr_vch_provider
+        FROM Users
+        WHERE usr_int_usrid = @UserId
+        ";
+
+                await using var conn = new SqlConnection(_connectionString);
+                await using var cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+
+                await conn.OpenAsync();
+
+                await using var reader = await cmd.ExecuteReaderAsync();
+
+                if (!await reader.ReadAsync())
+                    return null;
+
+                string provider = reader.IsDBNull(2) ? "" : reader.GetString(2).ToLower();
+
+                // 🔥 CASE 1 → GOOGLE / FACEBOOK
+                if (provider == "google" || provider == "facebook")
+                {
+                    if (!reader.IsDBNull(1))
+                    {
+                        var url = reader.GetString(1);
+
+                        if (!string.IsNullOrWhiteSpace(url))
+                        {
+                            return new UserImageResponse
+                            {
+                                ImageUrl = url
+                            };
+                        }
+                    }
+
+                    return null;
+                }
+
+                // 🔥 CASE 2 → NORMAL USERS (BLOB)
+                if (!reader.IsDBNull(0))
+                {
+                    byte[] imageBytes = (byte[])reader[0];
+
+                    string contentType = "image/jpeg";
+
+                    if (imageBytes.Length > 4)
+                    {
+                        if (imageBytes[0] == 0x89 && imageBytes[1] == 0x50)
+                            contentType = "image/png";
+                        else if (imageBytes[0] == 0xFF && imageBytes[1] == 0xD8)
+                            contentType = "image/jpeg";
+                    }
+
+                    return new UserImageResponse
+                    {
+                        ImageBytes = imageBytes,
+                        ContentType = contentType
+                    };
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error fetching image");
+                return null;
+            }
+        }
+
+        public async Task<bool> UpdatePhoneNumberAsync(int userId, string phoneNumber)
+        {
+            try
+            {
+                const string query = @"
+        UPDATE Users
+        SET usr_vch_phoneno = @Phone
+        WHERE usr_int_usrid = @UserId
+        ";
+
+                await using var conn = new SqlConnection(_connectionString);
+                await using var cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+                cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = phoneNumber;
+
+                await conn.OpenAsync();
+                var rows = await cmd.ExecuteNonQueryAsync();
+
+                return rows > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error updating phone number");
+                return false;
+            }
+        }
 
 
     }

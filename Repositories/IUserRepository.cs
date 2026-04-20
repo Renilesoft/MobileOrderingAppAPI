@@ -83,6 +83,16 @@ namespace ConcessionTrackerAPI.Repositories
 
         Task<ComboDetailsResponse?> GetComboDetailsAsync(int concessionId, long comboId);
 
+        Task<UserResponse?> GetUserByIdAsync(int userId);
+
+        Task<bool> UploadUserImageAsync(int userId, IFormFile file);
+
+        Task<UserImageResponse?> GetUserImageAsync(int userId);
+
+        Task<bool> UpdatePhoneNumberAsync(int userId, string phoneNumber);
+
+
+
 
     }
 }

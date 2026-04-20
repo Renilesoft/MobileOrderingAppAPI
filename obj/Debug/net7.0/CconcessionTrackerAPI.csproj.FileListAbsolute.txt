@@ -125,3 +125,4 @@ E:\Projects\TFS\BTAddOns\ConcessionTrackerApp\CconcessionTrackerAPI\bin\Debug\ne
 E:\Projects\TFS\BTAddOns\ConcessionTrackerApp\CconcessionTrackerAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 E:\Projects\TFS\BTAddOns\ConcessionTrackerApp\CconcessionTrackerAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
 E:\Projects\TFS\BTAddOns\ConcessionTrackerApp\CconcessionTrackerAPI\bin\Debug\net7.0\System.CodeDom.dll
+E:\Projects\TFS\BTAddOns\ConcessionTrackerApp\CconcessionTrackerAPI\obj\Debug\net7.0\CconcessionTrackerAPI.sourcelink.json

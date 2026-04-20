@@ -66,12 +66,14 @@ namespace ConcessionTrackerAPI.Models
     public class ItemResponse
     {
         public int ItemId { get; set; }
-
         public int CategoryId { get; set; }
-
+        public decimal ItemPrice { get; set; }
         public string ItemName { get; set; } = string.Empty;
 
-        public decimal ItemPrice { get; set; }
+        public int ImageSize { get; set; }
+
+        // 🔥 Base64 for Flutter
+        public string ImageBase64 { get; set; } = string.Empty;
     }
 
 
@@ -86,6 +88,7 @@ namespace ConcessionTrackerAPI.Models
     public class GetItemsResponse
     {
         public int ConcessionId { get; set; }
+
         public List<ItemResponse> Items { get; set; } = new();
     }
 
@@ -482,7 +485,7 @@ namespace ConcessionTrackerAPI.Models
 
         public List<ComboItemModel> Items { get; set; } = new();
     }
-   
+
 
     public class ComboItemModel
     {
@@ -491,6 +494,39 @@ namespace ConcessionTrackerAPI.Models
         public long ItemId { get; set; }
         public int Priority { get; set; }
     }
+
+    public class UserResponse
+    {
+        public int UserId { get; set; }
+
+        public string Name { get; set; } = string.Empty;
+
+        public string Email { get; set; } = string.Empty;
+
+        public string Provider { get; set; } = string.Empty;
+
+        public string PhotoUrl { get; set; } = string.Empty;
+
+        public string PhoneNo { get; set; } = string.Empty;
+    }
+
+    public class UserImageResponse
+    {
+        public byte[]? ImageBytes { get; set; }
+
+        public string? ImageUrl { get; set; }
+
+        public string ContentType { get; set; } = "image/jpeg";
+    }
+
+    public class UpdatePhoneRequest
+    {
+        public int UserId { get; set; }
+
+        public string PhoneNumber { get; set; } = string.Empty;
+    }
+
+
 
 
 

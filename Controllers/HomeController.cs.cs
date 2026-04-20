@@ -973,6 +973,136 @@ namespace ConcessionTrackerAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("getUser")]
+        public async Task<IActionResult> GetUser(int userId)
+        {
+            try
+            {
+                var result = await _repo.GetUserByIdAsync(userId);
+
+                if (result == null)
+                    return Ok("User Not Found");
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching user");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpPost("uploadUserImage")]
+        public async Task<IActionResult> UploadUserImage(int userId, IFormFile file)
+        {
+            try
+            {
+                var success = await _repo.UploadUserImageAsync(userId, file);
+
+                if (!success)
+                    return BadRequest("Upload failed");
+
+                return Ok("Image uploaded successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Upload error");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpGet("getUserImage")]
+        public async Task<IActionResult> GetUserImage(int userId)
+        {
+            try
+            {
+                var result = await _repo.GetUserImageAsync(userId);
+
+                if (result == null)
+                    return NotFound("No image found");
+
+                // 🔹 GOOGLE / FACEBOOK IMAGE (URL)
+                if (!string.IsNullOrWhiteSpace(result.ImageUrl))
+                {
+                    using var httpClient = new HttpClient();
+
+                    var imageBytes = await httpClient.GetByteArrayAsync(result.ImageUrl);
+
+                    return File(imageBytes, "image/jpeg");
+                }
+
+                // 🔹 BLOB IMAGE
+                if (result.ImageBytes != null)
+                {
+                    return File(result.ImageBytes, result.ContentType);
+                }
+
+                return NotFound("No image found");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Fetch error");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        private bool IsValidUSPhone(string phone)
+        {
+            if (string.IsNullOrWhiteSpace(phone))
+                return false;
+
+            var digits = new string(phone.Where(char.IsDigit).ToArray());
+
+            // Valid lengths: 10 or 11 (with country code)
+            return digits.Length == 10 || (digits.Length == 11 && digits.StartsWith("1"));
+        }
+
+        private string NormalizePhone(string phone)
+        {
+            var digits = new string(phone.Where(char.IsDigit).ToArray());
+
+            if (digits.Length == 10)
+                return "+1" + digits;
+
+            if (digits.Length == 11 && digits.StartsWith("1"))
+                return "+" + digits;
+
+            return phone; // fallback
+        }
+
+        [HttpPost("updatePhone")]
+        public async Task<IActionResult> UpdatePhone([FromBody] UpdatePhoneRequest request)
+        {
+            try
+            {
+                if (request == null || request.UserId <= 0)
+                    return BadRequest("Invalid request");
+
+                // 🔒 Validate USA phone format
+                if (!IsValidUSPhone(request.PhoneNumber))
+                    return BadRequest("Invalid US phone number format");
+
+                // 👉 Normalize phone (store clean)
+                var normalizedPhone = NormalizePhone(request.PhoneNumber);
+
+                var success = await _repo.UpdatePhoneNumberAsync(request.UserId, normalizedPhone);
+
+                if (!success)
+                    return NotFound("User not found");
+
+                return Ok(new
+                {
+                    message = "Phone number updated successfully",
+                    phone = normalizedPhone
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating phone");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
     }
 
 }
